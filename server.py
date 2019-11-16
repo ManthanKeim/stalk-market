@@ -220,7 +220,8 @@ def show_locations():
 
     pickups = db.session.query(Pickup).filter(Pickup.pickup_id > 1).all()
 
-    return render_template("locations.html", pickups=pickups)
+#    return render_template("locations.html", pickups=pickups)
+    return render_template("html5countrymapv3.9/locations.html")
 
 
 # @app.route('/cart')
@@ -480,4 +481,4 @@ if __name__ == "__main__":
     # Use the DebugToolbar
     # DebugToolbarExtension(app)
 
-    app.run(host="0.0.0.0")
+    app.run(port=8080)

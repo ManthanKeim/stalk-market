@@ -33,7 +33,7 @@ def add_products(link):
     for product in produce:
 
         name = product.find("h5", class_="product-tile__product-name").get_text().encode('utf-8')
-        price = float(product.find("span", class_="dollars").get_text() + "." + product.find("span", class_="cents").get_text())
+        price = float(product.find("span", class_="split-price__dollars").get_text() + "." + product.find("span", class_="split-price__cents").get_text())
 
         if Product.query.filter(Product.name == name, Product.price == price).first() or not name or not price:
             continue
@@ -63,7 +63,7 @@ def add_products(link):
 
         #Create Product instance
         new_prod = Product(name=name, price=price, description=description,
-                           aisle=categories[-2], category=categories[-1],
+                           aisle=categories[0], category=categories[0],
                            weight=weight, unit=unit, img=image, price_per=price_per,
                            per_unit=per_unit)
 

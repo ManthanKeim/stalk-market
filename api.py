@@ -43,7 +43,7 @@ def get_recipes(param_list):
     try:
         r.raise_for_status()
     except Exception as exc:
-        print "There was a problem: {}".format(exc)
+        print("There was a problem: {}".format(exc))
 
     # print r.status_code
 
@@ -75,13 +75,13 @@ def pay_for_cart():
     """Utilize stripe API"""
 
     placed_at = arrow.utcnow()
-    print "placed at ", placed_at
+    print("placed at ", placed_at)
     customer = db.session.query(Customer).filter(Customer.email == session['email']).one()
-    print "customer ", customer
+    print("customer ", customer)
     order = Order(customer_id=customer.user_id, placed_at=placed_at,
                   total=session["cart_total"], pickup_id=1)  # change pickup!!!
 
-    print "order = ", order
+    print("order = ", order)
     db.session.add(order)
     print "added order"
     db.session.commit()

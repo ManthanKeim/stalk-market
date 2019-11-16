@@ -5,6 +5,8 @@ import arrow
 
 
 db = SQLAlchemy()
+#db.create_all()
+
 
 
 class Dietary_Restriction(db.Model):
@@ -285,8 +287,8 @@ class Order_Quantity(db.Model):
                                                                                                   self.product_qty,
                                                                                                   self.order_id)
 
-
-def connect_to_db(app, database='postgresql:///shop'):
+#database='postgresql:///shop'
+def connect_to_db(app, database='postgresql://postgres:hellofriend@localhost:5432/shop'):
     """Connect the database to Flask app."""
 
     # Configure to use PostgreSQL database
@@ -294,6 +296,8 @@ def connect_to_db(app, database='postgresql:///shop'):
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
     db.init_app(app)
+    with app.app_context():
+        db.create_all()
 
 
 def example_data():
