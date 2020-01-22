@@ -50,3 +50,6 @@ And source it:
 ```
 source secrets.sh
 ```
+
+
+Microsoft Hacks
