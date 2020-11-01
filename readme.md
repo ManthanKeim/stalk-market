@@ -52,4 +52,4 @@ source secrets.sh
 ```
 
 
-Microsoft Hacks
+Microsoft Hacks.
