@@ -41,7 +41,7 @@ items==0.6.5
 itsdangerous==1.1.0
 Jinja2==2.10.1
 kiwisolver==1.1.0
-lxml==4.4.1
+lxml==4.6.5
 macholib==1.5.1
 MarkupSafe==1.1.1
 matplotlib==2.2.4
