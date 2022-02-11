@@ -119,7 +119,7 @@ SQLAlchemy-Utils==0.35.0
 stripe==2.40.0
 subprocess32==3.5.4
 tornado==6.0.2
-Twisted==19.7.0
+Twisted==22.1.0
 twitter==1.18.0
 urllib3==1.24.1
 w3lib==1.21.0
